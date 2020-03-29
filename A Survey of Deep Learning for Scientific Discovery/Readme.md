@@ -23,9 +23,27 @@ We hope that this survey will help accelerate the use of deep learning across di
 我们还包括整个设计过程的概述、实现技巧，以及由社区开发的大量教程、研究总结、开源的深度学习管道和预训练模型的链接。 
 我们希望这项调查将有助于加速深度学习在不同科学领域的应用。
 
-## 更新日志
-### 2020 03 28
+## 各类资源链接：
 
-Introduction 已提交
+非线性降维方法：
+* https://github.com/oreillymedia/t-SNE-tutorial
+* https://github.com/lmcinnes/umap
+
+随机森林的可解释性：
+* https://github.com/interpretml/interpret
+
+深度学习：
+* [课程] 多伦多大学的机器学习课程
+* [课程] 斯坦福大学的 CS229
+* [社区] https://towardsdatascience.com/ 
+* [书籍] https://d2l.ai/index.html
+* [书籍] https://github.com/rasbt/python-Machine-Learning-book-2nd-edition
+
+## 更新日志
+### 2020 03 29
+
+第一节 已提交
+
+第二节 已提交
 
 Refenerce 尚未校对
