@@ -1,7 +1,7 @@
 # A Survey of Deep Learning for Scientific Discovery
-### 中英双语版
-### Authors: Maithra Raghu, Eric Schmidt
-### 原文地址：https://arxiv.org/abs/2003.11755v1
+Authors: Maithra Raghu, Eric Schmidt
+
+原文地址：https://arxiv.org/abs/2003.11755v1
 
 ## Abstract
 Over the past few years, we have seen fundamental breakthroughs in core problems in machine learning, largely driven by advances in deep neural networks. 
@@ -39,7 +39,7 @@ We hope that this survey will help accelerate the use of deep learning across di
 * [书籍] https://d2l.ai/index.html
 * [书籍] https://github.com/rasbt/python-Machine-Learning-book-2nd-edition
 
-## 更新日志
+## 翻译进度
 ### 2020 03 29
 
 第一节 已提交
