@@ -49,9 +49,11 @@ At a very high level, we can offer a few templates of ways in which deep learnin
    深度学习技术能够进行许多复杂的数据转换，对于这样的情况非常有效，例如，使用基于深度神经网络的分割模型来自动识别细胞图像中的细胞核，或者使用姿势估计系统来快速标记小鼠视频中的行为以供神经科学分析。
 
 ### 2.2 Deep Learning Workflow
-#### 原文
 With these examples of templates for deep learning applications in science, we next look at the end to end workflow for designing a deep learning system. 
 **Figure 1** illustrates what a typical workflow might look like.
+
+![](./Figure1.png)
+
 Having selected the overarching (predictive) problem of interest, we can broadly think of having three stages for designing and using the deep learning system: (i) data related steps, such as collection, labelling, preprocessing, visualization, etc (ii) learning focused steps, such as choice of deep neural network model, the task and method used to train the model (iii) validation and analysis steps, where performance evaluations are conducted on held out data, as well as analysis and interpretation of hidden representations and ablation studies of the overall methods.
 These three stages are naturally sequential. 
 However, almost all of the time, the first attempt at building an end-to-end deep learning system will result in some kind of failure mode. 
@@ -74,32 +76,36 @@ Unlike different models and tasks, methods can be subsets of other methods.
 For example, self-supervision, a method where the neural network is trained on data instances and labels, but the labels automatically created from the data instance, can also be considered a type of supervised learning. 
 This can be a little confusing! But it suffices to keep in mind the general notions of models, tasks and methods.
 
-#### 译文(需要修改)
+### 2.2 深度学习工作流
 通过这些用于科学中深度学习应用的模板示例，我们接下来研究用于设计深度学习系统的端到端工作流。
 **图 1** 说明了一个典型的工作流可能是什么样子。
-在选择了感兴趣的总体 (预测) 问题之后，我们可以大致地认为深度学习系统的设计和使用分为三个阶段: 
+在选择了感兴趣的首要 (预测) 问题之后，我们可以大致地认为深度学习系统的设计和使用分为三个阶段: 
 1. 数据相关步骤，如收集、标记、预处理、可视化等; 
 2. 学习重点步骤，如深度神经网络模型的选择; 用于训练模型的任务和方法; 
-3. 验证和分析步骤，其中对持有的数据进行性能评估; 以及对隐藏表示的分析和解释以及总体方法的研究。
+3. 验证和分析步骤，其中对流出的进行性能评估; 以及对隐藏表示的分析和解释以及总体方法的消融研究。
 这三个阶段是自然顺序的。
 然而，几乎所有时候，第一次尝试构建端到端的深度学习系统都会导致某种失败模式。
-为了解决这些问题，重要的是牢记设计过程的迭代性质，不同阶段的结果通知其他阶段的重新设计和重新运行。
-**图 1** 提供了一些带有向后连接箭头的常见迭代的示例: 
+为了解决这些问题，重要的是牢记设计过程的迭代性质，用不同阶段的结果信息来重新设计和重新运行其他阶段。
+**图 1** 提供了一些使用反向连接箭头的常见迭代示例: 
 1. 迭代 (1) 箭头，对应于数据收集过程中的迭代，
-   例如。 在执行了一些数据可视化后，原始实例的标签过程可能需要调整——第一个标签机制可能太吵，或者不能捕获感兴趣的目标
-2. 迭代 (2) 箭头，对应于学习过程中的迭代，原因如下:决定一个不同的任务或方法可能更合适，或者将学习过程分解为多个步骤——首先执行自我监督，然后执行监督式学习
+   例如在执行了一些数据可视化后，原始实例的标签过程可能需要调整——第一个标签机制可能带有太多噪声，或者不能捕获感兴趣的目标
+2. 迭代 (2) 箭头，对应于学习过程中的迭代，例如一个不同的任务或方法可能更合适，或者将学习过程分解为多个步骤——首先执行自监督，然后执行监督学习
 3. 迭代 (3) 箭头，根据学习步骤的结果更改与数据相关的步骤
-4. 迭代 (4) 箭头，重新设计由验证结果提供信息的学习过程。 发现模型在验证时对训练数据过度拟合，从而减少训练时间或使用更简单的模型
-5. 迭代 (5) 箭头，根据验证 / 分析结果调整数据步骤，例如:发现该模型依赖于数据的虚假属性，并改进数据收集 / 管理来缓解这一问题。
+4. 迭代 (4) 箭头，根据验证结果提供信息重新设计学习过程。 例如发现模型在验证时对训练数据过拟合，从而减少训练时间或使用更简单的模型
+5. 迭代 (5) 箭头，根据验证 / 分析的结果调整数据步骤，例如:发现该模型依赖于数据的虚假属性，改进数据收集 / 管理来缓解这一问题。
 
-调查和命名的焦点在这个调查中，我们提供了在学习阶段的许多技术的全面概述，以及在数据和验证阶段的一些技术(例如数据增强，解释性和表示分析，第7节)。
-在学习阶段，我们关注流行的模型、任务和方法。 对于模型(有时也称为结构) ，我们指的是深层神经网络的实际结构ーー有多少层、什么类型、有多少神经元等等。
-所谓任务，我们指的是预测问题，特别是输入和输出的类型。
-例如，在一个图像分类任务中，输入由图像组成，输出由一组不同类别(称为类)的离散概率分布组成。
-通过方法，我们指的是用于训练系统的学习过程的类型。
-例如，监督式学习是一个非常普遍的学习过程，由神经网络被给予数据实例和相应的标签，标签提供监督。
-与不同的模型和任务不同，方法可以是其他方法的子集。
-例如，自我监督，一种神经网络在数据实例和标签上训练的方法，但是从数据实例自动创建的标签，也可以被认为是一种监督式学习。
+**调查和命名的重点**
+
+在这一调查中，我们提供了在学习阶段的许多技术的全面概述，以及在数据和验证阶段的一些技术(例如数据增强，解释性和表示分析，第7章)。
+在学习阶段，我们关注流行的模型、任务和方法。 
+* 对于模型(有时也称为架构) ，我们指的是深层神经网络的实际结构——有多少层、什么类型、有多少神经元等等。
+* 所谓任务，我们指的是预测问题，特别是输入和输出的类型。
+  例如，在一个图像分类任务中，输入由图像组成，输出由一组不同类别(称为类)的离散概率分布组成。
+* 采用的方法，我们指的是用于训练系统的学习过程的类型。
+  例如，监督式学习是一个非常普遍的学习过程，由神经网络被给予数据实例和相应的标签，标签提供监督。
+  不像不同的模型和任务之间，方法可以是其他方法的子集。
+  例如，自监督，一种神经网络在数据实例和标签上训练的方法，但是标签根据数据实例自动创建，也可以被认为是一种监督式学习。
+
 这可能有点令人困惑！ 但是只要记住模型、任务和方法的一般概念就足够了。
 
 ### 2.3 Deep Learning or Not?
@@ -112,6 +118,7 @@ Below we very briefly overview some of the most ubiquitous machine learning meth
 In scientific settings, the ultimate goal of data analysis is often understanding — identifying the underlying mechanisms that give rise to patterns in the data. 
 When this is the goal, dimensionality reduction, and/or clustering are simple (unsupervised) but highly effective methods to reveal hidden properties in the data. 
 They are often very useful in the important first step of exploring and visualizing the data (even if more complex methods are applied later.)
+
 ##### *Dimensionality Reduction*
 Dimensionality reduction methods are either linear, relying on a linear transformation to reduce data dimensionality, or non-linear, reducing dimensionality while approximately preserving the non-linear (manifold) structure of the data. Popular linear dimensionality reduction methods include PCA and non-negative matrix factorization, with some popular non-linear methods including t-SNE [141] and UMAP [148]. 
 Most dimensionality reduction methods have high-quality implementations in packages like scikit-learn or on github, e.g. https://github.com/oreillymedia/t-SNE-tutorial or https://github.com/lmcinnes/umap.
@@ -129,10 +136,60 @@ These methods also often provide a good way to sanity check the overarching prob
 Due to their simplicity, linear and logistic regression are highly interpretable, and provide straightforward ways to perform feature attribution.
 
 #### **Decision Trees, Random Forests and Gradient Boosting** 
-Another popular class of methods are deci￾sion trees, random forests and gradient boosting. 
+Another popular class of methods are decision trees, random forests and gradient boosting. 
 These methods can also work with regression/classification tasks, and are well suited to model non-linear relations between the input features and output predictions. 
 Random forests, which ensemble decision trees, can often be preferred to deep learning methods in settings where the data has a low signal-to-noise ratio. 
 These methods can typically be less interpretable than linear/logistic regression, but recent work [160] has looked at developing software libraries https://github.com/interpretml/interpret to address this challenge.
 
 #### **Other Methods and Resources**
 Both the aforementioned techniques and many other popular methods such as graphical models, Gaussian processes, Bayesian optimization are overviewed in detail in excellent course notes such as University of Toronto‘s Machine Learning Course or Stanford‘s CS229, detailed articles at https://towardsdatascience.com/ and even interactive textbooks such as https://d2l.ai/index.html (called Dive into Deep Learning [267]) and https://github.com/rasbt/python-machine-learning-book-2nd-edition.
+
+### 2.3 是否需要用深度学习？
+作为深入研究不同深度学习技术之前的最后一点，在提出问题时，重要的是要考虑深度学习是否提供了解决问题的正确工具集。
+强大的底层神经网络模型提供了许多复杂的功能，如学习复杂的图像转换。
+然而，在许多情况下，深度学习可能不是最好的开始技术或最适合问题。
+下面我们非常简要地概述一些最普遍的机器学习方法，特别是在科学环境中。
+
+#### 降维和聚类
+
+在科学领域，数据分析的最终目标往往是理解——识别形成数据模式的潜在机制。
+当这是我们的目标时，降维和、或聚类是简单(无监督的)但非常有效的方法来揭示数据中的隐藏属性。
+在探索和可视化数据的第一步中，它们通常非常有用(即使稍后将应用更复杂的方法)
+
+##### 降维
+降维方法要么是线性的，依靠线性变换来降低数据维数; 要么是非线性的，降低维数的同时近似保持数据的非线性(流形)结构。 流行的线性降维方法包括 PCA 和非负矩阵分解，还有一些流行的非线性方法，包括 t-SNE [141]和 UMAP [148]。
+大部分降维方法在如 scikit-learn 包或者 Github 上都有高质量的实现：
+* https://github.com/oreillymedia/t-SNE-tutorial
+* https://github.com/lmcinnes/umap.
+
+
+##### 聚类
+聚类方法通常与降维结合使用，它提供了一种强大的、无监督的方式来识别数据总体中的异同点。
+常用的聚类方法包括 k-means (尤其是 k-means 变体)、 Gaussian Mixture Models (GMMs)、层次聚类和 SVD 聚类。
+像降维技术一样，这些聚类方法在像 scikit-learn 这样的包中有健壮/鲁棒的实现。
+
+在7.2.2节中，我们讨论了降维和聚类如何用于神经网络的隐藏表示。
+
+#### 线性回归、 Logistic 回归 (和变种!)
+
+可以说，对于监督问题如分类和回归，最基本的技术如线性和 Logistic 回归以及它们的变体(例如 Lasso，Ridge Regression)在有限数据和一组清晰的(可能是预处理过的)特征(例如表格数据)时可能特别有用。
+这些方法通常还提供了一个很好的方法来检查首要问题的形成，并且可能是测试完整问题的一个非常简单的版本的一个很好的起点。
+由于它们的简单性，线性和 Logistic 回归是高度可解释的，并提供了直接的方式来执行特征归属。
+
+#### 决策树，随机森林和梯度提升
+
+另一类流行的方法是决策树、随机森林和梯度提升。
+这些方法也可以用于回归 / 分类任务，并且非常适合于对输入特征和输出预测之间的非线性关系建模。
+随机森林是一种集成决策树，在数据信噪比较低的情况下，它往往比深度学习方法更受欢迎。
+这些方法通常比线性 / 逻辑回归更难解释，但是最近的工作[160]已经着眼于开发软件库来应对这一挑战
+* https://github.com/interpretml/interpret
+
+
+#### 其他方法和资源
+上述技术和许多其他流行的方法，如图形模型，高斯过程，贝叶斯优化在优秀的课程笔记上有详细介绍
+* 多伦多大学的机器学习课程
+* 斯坦福大学的 CS229
+* 详细文章： https://towardsdatascience.com/ 
+* 交互式教科书：
+  * https://d2l.ai/index.html 深入深度学习[267]
+  * https://github.com/rasbt/python-Machine-Learning-book-2nd-edition。
