@@ -2,7 +2,7 @@
 
 文章：Improving the Robustness of Graphs through Reinforcement Learning and Graph Neural Networks
 
-作者: Victor-Alexandru Darvariu, Stephen Hailes, Mirco Musolesi
+作者：Victor-Alexandru Darvariu, Stephen Hailes, Mirco Musolesi
 
 链接：https://arxiv.org/pdf/2001.11279.pdf
 
