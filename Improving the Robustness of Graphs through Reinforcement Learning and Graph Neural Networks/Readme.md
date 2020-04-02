@@ -2,7 +2,7 @@
 
 作者: Victor-Alexandru Darvariu, Stephen Hailes, Mirco Musolesi
 
-链接：https://arxiv.org/pdf/2001.11279.pdf
+链接: https://arxiv.org/pdf/2001.11279.pdf
 
 ## Abstract
 
