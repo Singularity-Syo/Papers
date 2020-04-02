@@ -16,14 +16,13 @@
 * 节点中心性度量 [Bianchini et al., [2005](https://dl.acm.org/doi/10.1145/1052934.1052938)]
 * 全局性质 [Newman, [2018](lack)]
 
-研究网络结构的重点在于提出具有各种特性的网络模型，再抽象地研究这些网络模型的各种拓扑结构的统计特征。传统图论起源于七桥问题，在研究中采用的网络模型多是规则图，主要关注静态的，具有特殊结构的拓扑特征。后来由 Erdos 和 Renyi 将概率论引入图论，提出了随机网络或者叫随机图理论。随即图的意思是指任意两个节点之间是否建立一条边是按照一定的随机模型确定的，他们提出的一种随机网络被称为 ER 随机网络，因为它的度分布，也就是一个节点所连边数的概率分布为泊松分布，所以也叫泊松随即网络。后来随着计算机技术的发展，对现实超大规模网络研究发现了许多重要的统计规律。Watts 和 Strogatz 在 Nature 上发表了关于现实世界网络的小世界特性研究，提出了 WS小世界网络模型，而 Barabasi 和 Albert 在 Science 上发表了无标度网络的开创性研究并提出了 BA 无标度网络模型，也称为 BA 随机图。这个模型简单说来就是演化增长和优先连接，也就是说网络不断增长，而新加入的节点倾向于与那些重要的节点也就是拥有更多边的节点相连。这两篇工作揭示了许多形态各异的网络实际上具有相同的拓扑结构特征，并给出了理论模型来阐释生成机理。
+研究网络结构的重点在于提出具有各种特性的网络模型，再抽象地研究这些网络模型的各种拓扑结构的统计特征。传统图论起源于七桥问题，在研究中采用的网络模型多是规则图，主要关注静态的，具有特殊结构的拓扑特征。后来由埃尔德什和雷尼将概率论引入图论，提出了随机网络或者叫随机图理论。随机图的意思是指任意两个节点之间是否建立一条边是按照一定的随机模型确定的，他们提出的一种随机网络被称为 ER 随机网络，因为它的度分布，也就是一个节点所连边数的概率分布为泊松分布，所以也叫泊松随机网络。后来随着计算机技术的发展，对现实超大规模网络研究发现了许多重要的统计规律。1998 年瓦茨和斯特罗加茨 在 Nature 上发表了关于现实世界网络的小世界特性研究，提出了 WS 小世界网络模型，这个模型的起源于社会学实验六度分隔理论，也就是任意两个人的距离是 6 这个实验，后来有贝肯的明星游戏和数学界的埃尔德什数，前者是与电影演员贝肯合作，平均贝肯数为2.9，后者是和埃尔德什合作过的学者距离平均是4.65，这些都是说明了一个由大量顶点构成的图任意两点之间的平均路径长度比顶点数小得多这一性质。而 1999 年 Barabasi 和 Albert 在 Science 上发表了无标度网络的开创性研究并提出了 BA 无标度网络模型，也称为 BA 随机图，这个图的度分布则服从幂律分布。这个模型简单说来就是演化增长和优先连接，也就是说网络不断增长，而新加入的节点倾向于与那些重要的节点也就是拥有更多边的节点相连。这两篇工作揭示了许多形态各异的网络实际上具有相同的拓扑结构特征，并给出了理论模型来阐释生成机理。
 
-其中有一个吸引了网络科学界及从业者的度量是 Robustness，来自于 ，在原文中是称为 Resilience，意思是 n. 它被定义为图经受失败，对关键节点的目标攻击和组合的承受能力。
-网络结构决定网络功能，因此结构的改变会影响网络功能的表达，因此网络结构在遭受破坏后，网络结构和功能能否保持完整性的研究就具有相当重要的意义。这里引入一个概念——网络的鲁棒性，在 [Newman [2003](http://epubs.siam.org/doi/10.1137/S003614450342480)] 里是称为 Resilience，意思是快速恢复的能力; 适应力; 还原能力; 弹力，也就是说在遭受随机故障 (random failure) 或蓄意攻击 (intentional attack) 后，网络仍能保持一定的结构完整性和功能的能力。这里的随机故障是说任意节点或者边以相同的概率发生故障，或者说按照一定的比例删除边或者节点。而蓄意攻击则是指删除具有特定特性的节点和边，比如度数比较高的节点。可以看得出来前者主要是描述现实网络遭受的无法预测的故障，后者则是描述人为的针对性的定向破坏。鲁棒性的体现就在遭受破坏后，剩余节点之间能够以较高概率保持连通并且平均最短路径长度变化不大。比如说 BA 随机图遭受随机故障时能表现出一定的抗性但面对蓄意攻击则十分脆弱。
+网络结构决定网络功能，因此结构的改变会影响网络功能的表达，因此网络结构在遭受破坏后，网络结构和功能能否保持完整性的研究就具有相当重要的意义。这里引入一个概念——网络的鲁棒性，在 [Newman [2003](http://epubs.siam.org/doi/10.1137/S003614450342480)] 里是称为 Resilience，瑞zi里恩斯，意思是快速恢复的能力; 适应力; 还原能力; 弹力，也就是说在遭受随机故障 (random failure) 或蓄意攻击 (intentional attack) 后，网络仍能保持一定的结构完整性和功能的能力。这里的随机故障是说任意节点或者边以相同的概率发生故障，或者说按照一定的比例删除边或者节点。而蓄意攻击则是指删除具有特定特性的节点和边，比如度数比较高的节点。可以看得出来前者主要是描述现实网络遭受的无法预测的故障，后者则是描述人为的针对性的定向破坏。鲁棒性的体现就在遭受破坏后，剩余节点之间能够以较高概率保持连通并且平均最短路径长度变化不大。比如说 BA 随机图遭受随机故障时能表现出一定的抗性但面对蓄意攻击则十分脆弱。
 
 > Related to degree distributions is the property of resilience of networks to the removal of their vertices, which has been the subject of a good deal of attention in the literature. Most of the networks we have been considering rely for their function on their connectivity, i.e., the existence of paths leading between pairs of vertices. If vertices are removed from a network, the typical length of these paths will increase, and ultimately vertex pairs will become disconnected and communication between them through the network will become impossible. Networks vary in their level of resilience to such vertex removal. There are also a variety of different ways in which vertices can be removed and different networks show varying degrees of resilience to these also. For example, one could remove vertices at random from a network, or one could target some specific class of vertices, such as those with the highest degrees. Network resilience is of particular importance in epidemiology, where “removal” of vertices in a contact network might correspond for example to vaccination of individuals against a disease. Because vaccination not only prevents the vaccinated individuals from catching the disease but may also destroy paths between other individuals by which the disease might have spread, it can have a wider reaching effect than one might at first think, and careful consideration of the efficacy of different vaccination strategies could lead to substantial advantages for public health.
 
->与度分布相关的是网络对去除顶点的弹性特性，这一直是文献中广泛关注的主题。 我们一直在考虑的大多数网络的功能依赖于它们的连通性，也就是说，在c成对顶点之间存在路径。 如果从网络中移除顶点，这些路径的长度将增加，最终这对顶点将变得不连接，它们之间通过网络进行通信将变得不可能。 网络对这种顶点移除的弹性水平各不相同。 还有许多不同的方法可以去除顶点，不同的网络对这些方法也表现出不同程度的弹性。 例如，可以从网络中随机移除顶点，或者针对特定类型的顶点，例如那些具有最高度的顶点。 网络弹性在流行病学中特别重要，在这种情况下，接触网络中顶点的”移除”可能相当于个人对某种疾病的免疫接种。 由于接种疫苗不仅可以防止接种疫苗的个体感染疾病，而且还可能破坏其他个体之间可能传播疾病的路径，因此它可以产生比人们最初想象的更广泛的影响，仔细考虑不同疫苗接种策略的效力可以为公共卫生带来巨大的好处。
+>与度分布相关的是网络对去除顶点的弹性特性，这一直是文献中广泛关注的主题。 我们一直在考虑的大多数网络的功能依赖于它们的连通性，也就是说，在成对顶点之间存在路径。 如果从网络中移除顶点，这些路径的长度将增加，最终这对顶点将变得不连接，它们之间通过网络进行通信将变得不可能。 网络对这种顶点移除的弹性水平各不相同。 还有许多不同的方法可以去除顶点，不同的网络对这些方法也表现出不同程度的弹性。 例如，可以从网络中随机移除顶点，或者针对特定类型的顶点，例如那些具有最高度的顶点。 网络弹性在流行病学中特别重要，在这种情况下，接触网络中顶点的”移除”可能相当于个人对某种疾病的免疫接种。 由于接种疫苗不仅可以防止接种疫苗的个体感染疾病，而且还可能破坏其他个体之间可能传播疾病的路径，因此它可以产生比人们最初想象的更广泛的影响，仔细考虑不同疫苗接种策略的效力可以为公共卫生带来巨大的好处。
 
 鲁棒性定义：
 * [Cohen et al.,[2000](http://europepmc.org/article/MED/11082612)] 在变成多个连通分量前需要移除一定数量的节点 
@@ -31,15 +30,15 @@
 * [Beygelzimer et al., [2005](https://www.sciencedirect.com/science/article/pii/S0378437105003523)] 最大连通分量的大小减小
 
 已经研究过：
-* [Cohen et al., [2001](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.3682)]通信网络如英特网的鲁棒性
+* [Cohen et al., [2001](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.3682)] 通信网络如英特网的鲁棒性
 * [Cetinay et al., [2018](https://link.springer.com/article/10.1007/s41109-018-0089-9)] 基础设施网络如交通和能量分配的鲁棒性  
 
 在攻击策略下的最优配置也被发现——比如，在联合的弹性目标函数对于两种攻击策略，最优网络有 bi-model 或者 tri-model 度分布：
 * [Valente et al., [2004](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.92.118702)]
 
-但是从零开始建立一个鲁棒的网络是不实际的，因为网络往往是根据特定的目的设计的。因此，先前的工作已经解决了修改现有网络来提升他们的鲁棒性的问题。
-* [Beygelzimer et al. [2005](https://www.sciencedirect.com/science/article/pii/S0378437105003523)]  等人通过考虑基于随机或优先的（根据节点的度）加边或重连来解决这一问题。
-* [Schneider et al., [2011](https://www.pnas.org/content/108/10/3838)]，作者们提出了一种贪婪的修改方案，基于随机选边和当弹性度量提升时交换。
+但是从零开始建立一个鲁棒的网络是不实际的，因为网络往往是根据特定的目的设计的。因此，先前的工作已经研究了修改现有网络来提升他们的鲁棒性的问题。
+* [Beygelzimer et al. [2005](https://www.sciencedirect.com/science/article/pii/S0378437105003523)]  通过考虑基于随机或优先的（根据节点的度）加边或重连来解决这一问题。
+* [Schneider et al., [2011](https://www.pnas.org/content/108/10/3838)] 提出了一种贪婪的修改方案，基于随机选边和当弹性度量提升时交换。
 
 这些策略虽然简单易懂但可能不会得到最佳的解决方案，也无法在具有不同特征和规模的网络中得到推广，当然更好的方案可能可以用过穷举搜索得到，但探索所有可能的拓扑结构的组合的复杂性以及计算度量的成本使得这种策略并不可行。
 
@@ -104,7 +103,7 @@ $$
 **Definition of Objective Functions for Robustness**
 
 本文主要关注的是图的鲁棒性，将两种攻击作为目标函数。
-给定一个图 $G$，文章定义了一个 critical fraction $p(\xi)\in [0,1]$，意思是将图按照顺序 $\xi$ 移除节点使得图变成无连接图的最小节点集，这一比例越大，这个图可以说越鲁棒。移除的顺序对 $p(\xi)$ 来说有影响，对应两种攻击策略,前者是随即顺序，而后者则是按照节点的度数排列的，如下式。
+给定一个图 $G$，文章定义了一个 critical fraction $p(\xi)\in [0,1]$，意思是将图按照顺序 $\xi$ 移除节点使得图变成无连接图的最小节点集，意思应该是去除节点数占节点总数的比例，这一比例越大，这个图可以说越鲁棒。移除的顺序对 $p(\xi)$ 来说有影响，对应两种攻击策略,前者是随机顺序，而后者则是按照节点的度数排列的，如下式。
 $$
 \forall v, u \in V,\xi_{targeted}(v) \leq \xi_{targeted}(u) \iff d^v \geq d^u
 $$
@@ -128,7 +127,7 @@ $$
 以 **Section 2** 描述的问题模型为基础，讨论建立鲁棒图的方法的相关设计和应用，当然还需要有泛化能力。尽管这个形式化问题可以用表格化的强化学习方法来求解，但是状态的数量会迅速变得难以处理，比如二十个节点的带标签的无权连接图有接近 10^57 个。
 因此，需要一种方法来考虑图的属性，这些属性具有标签不可知性、排列不变性，并且在相似的状态和操作之间进行泛化。图神经网络满足这些要求。
 
-本文方法里采用基于 structure2vec(S2V) 的图表示，一种根据平均场推断在图模型的图神经网络架构, 给定一个输入图 $G=(V,E)$，每个节点 $v\in V$ 有特征向量 $x_v$，边 $(v,u)$ 也有特征向量 $w(v,u)$。该方法的目标是对于每一个节点 $v$ 产生一个特征向量 $\mu_v$ 能够捕获图的结构以及邻居之间的交互。几轮聚合邻居的特征并应用一个非线性激活函数 $F$，比如神经网络或者核函数。对于每一轮，网络同时应用如下更新，其中 $\mathcal{N}(v)$ 是节点的邻居：
+本文方法里采用基于 structure2vec(S2V) 的图表示，一种根据平均场推断的图神经网络架构, 给定一个输入图 $G=(V,E)$，每个节点 $v\in V$ 有特征向量 $x_v$，边 $(v,u)$ 也有特征向量 $w(v,u)$。该方法的目标是对于每一个节点 $v$ 产生一个特征向量 $\mu_v$ 能够捕获图的结构以及邻居之间的交互。几轮聚合邻居的特征并应用一个非线性激活函数 $F$，比如神经网络或者核函数。对于每一轮，网络同时应用如下更新，其中 $\mathcal{N}(v)$ 是节点的邻居：
 $$
 \mu_v^k=F(x_v,\{\mu^k_u\}_{u\in\mathcal{N}(v)},\{w(v,u)\}_{u\in \mathcal{N}(v)};\Theta)
 $$
@@ -151,14 +150,14 @@ $$
 文章选择的是 DQN 的一种变体即 Double DQN [Van Hasselt et al., 2016] 即使用两个不同的模型分别进行贪婪动作选择和状态动作值估计来解决标准 DQN 动作值的过高估计。
 除此之外，文章用两步回报而不是单步的回报进行学习。
 
-一个关键的问题是状态的表示，一种做法是通过计算子图的 S2V 嵌入来表示状态 $S_t$，这个子图由所有到时间 $t$ 增加的边连接的节点组成，并通过在时间 $t$ 连接节点 $v$ 和 $u$ 的嵌入来表示 $A_t=add (v，u)$ 的动作。但是这种动作的定义方式无法推广到大型图，因为每一步都要考虑 $O(|V|^2)$ 种动作。所以文章采用的方法是 [Dai et al., 2018] 所用的方法，将每一个动作分解为两步 $A_t^{(1)}$ 和 $A_t^(2)$，前者对应的是选择第一个节点，后者则是第二个，这样的话智能体每个时间步只需要考虑 $O(|V|)$ 数量的动作。
+一个关键的问题是状态的表示，一种做法是通过计算子图的 S2V 嵌入来表示状态 $S_t$，这个子图由所有到时间 $t$ 增加的边连接的节点组成，并通过在时间 $t$ 连接节点 $v$ 和 $u$ 的嵌入来表示 $A_t=add (v, u)$ 的动作。但是这种动作的定义方式无法推广到大型图，因为每一步都要考虑 $O(|V|^2)$ 种动作。所以文章采用的方法是 [Dai et al., 2018] 所用的方法，将每一个动作分解为两步 $A_t^{(1)}$ 和 $A_t^{(2)}$，前者对应的是选择第一个节点，后者则是第二个，这样的话智能体每个时间步只需要考虑 $O(|V|)$ 数量的动作。
 
 ## 4 Experimental Setup
 
 **学习环境**
 
 文章构建了一个允许定义任意图目标函数 $\mathcal{F}$ 的学习环境，并为智能体提供一个标准化的接口。
-我们对环境、智能体和实验 suite 的实现基于 PyTorch [ Paszke et al. ，2019]。
+我们对环境、智能体和实验的实现基于 PyTorch [Paszke et al., 2019]。
 
 **Baselines**
 
@@ -169,7 +168,7 @@ $$
 **图模型**
 
 我们研究下列模型生成的图的性能:
-* **Erdos-Renyi(ER)**：从{G}^{(N,m)}[Erdos Renyi，1960]中统一采样的图。文章使用 $m =\frac{20}{100}∗\frac{N*(N-1)}{2}$，它代表所有可能边的 20% 。
+* **Erdos-Renyi(ER)**：从${G}^{(N,m)}$ [Erdos Renyi，1960] 中统一采样的图。文章使用 $m =\frac{20}{100}∗\frac{N*(N-1)}{2}$，它代表所有可能边的 20% 。
 
 * **Barabasi-Albert(BA)** : 一种增长模型，其中 $n$ 节点优先连接到 $M$ 现有节点[ Barabasi 和 Albert, [1999](https://science.sciencemag.org/content/286/5439/509)]。
 我们使用 $M=2$。
@@ -187,20 +186,11 @@ $$
 为了估计目标函数值，文章还使用了一定数量的排列，取值等于顶点数。而对较大图的进行目标函数估计时，则考虑以下数量 $\{30,40,50,60,70,80,90,100\}$，并且根据 $|V|$ 的不同，对 $m, L, R$ 三个数字进行修改。
 
 **RNet-DQN 参数**
-Gtrain is divided into batches of size 50. 
-Training proceeds for 100000 steps. 
-We use a learning rate $\alpha = 0.001$ and a discount factor $\gamma=1$ since we are in the finite horizon case. 
-We use a value of the exploration rate $\epsilon$ that we decay linearly from $\epsilon = 1$ to $\epsilon = 0.1$ for the first 50000 steps, then fix $\epsilon = 0.1$ for the rest of the training.
-We use 8 latent variables and a hidden layer of size 32. 
-The only hyperparameter we tune is the number of message passing rounds $K$, for $K\in {2, 3, 4, 5}$, selecting the agent with the best performance over $\mathbf{G}^{validate}$.
 
-Training, hyperparameter optimization and evaluation are performed separately for each graph family and objective function $\mathcal{F}$. 
-Since deep RL algorithms are notoriously dependent on parameter initializations and stochastic aspects of the environment [Henderson et al., 2018], we aggregate the results over 5 runs of the training-evaluation loop.
 $\mathbf{G}^{train}$ 训练集划分为大小为 50 的批次，训练进行了十万步，学习率 $\alpha=0.001$ 和折扣因子 $\gamma=1$，这是因为 episode 是有限的。
 探索率 $\epsilon$，在前 50000 步线性地从 $\epsilon=1$ 衰减到 $\epsilon=0.1$，然后在剩下的训练中固定 $\epsilon=0.1$。
 使用 8 个隐变量和一个大小为 32 的隐藏层。
 调优的唯一超参数是消息传递的轮数 $K$，对于 $K\in {2,3,4,5}$，选择在验证集上性能最好的智能体。
-
 
 对每种图和目标函数分别进行训练、超参数优化和评估。由于深度强化学习算法是众所周知的依赖于参数初始化和环境的随机方面[ Henderson et al., 2018] ，文章聚合了训练-评估的 5 次运行的结果。
 
@@ -224,6 +214,7 @@ $\mathbf{G}^{train}$ 训练集划分为大小为 50 的批次，训练进行了�
 文章发现在考虑 BA 图时，RNet-DQN 的性能即两个目标函数下降相对较少。对于 ER 图，性能会迅速下降，对于大小为 $|V|=50$ 及以上的图，所学到的策略比随机策略执行得更差。这表明 ER 图的鲁棒性性质随着尺寸的增大而发生根本性的变化，而且 RNet-DQN 所学到的特征无法改进目标函数。
 
 **计算成本**
+
 文章将 RNet-DQN 的计算成本与基线进行比较，以便理解权衡。
 根据经验，文章观察到贪婪基线计算顶点数超过 $|V|=50$ 的图时计算成本过高。文章还测量了不同智能体在执行评估时的平均决策时间。
 
@@ -247,7 +238,7 @@ $\mathbf{G}^{train}$ 训练集划分为大小为 50 的批次，训练进行了�
 尽管如此，训练还是包括了对每个训练图每一步评估一次目标函数。
 因此，在需要对许多图进行预测或者模型可以缩放为计算目标函数开销很大的大图的情况下，这种方法是有优势的。
 
-# 6 Limitations and Future Work
+## 6 Limitations and Future Work
 
 在这一部分中，文章讨论了所提方法的一些局限性以及这项工作可能的未来方向。
 因为我们使用的是深度强化学习方法，所以这类算法有一些典型的注意事项。
@@ -270,7 +261,7 @@ $\mathbf{G}^{train}$ 训练集划分为大小为 50 的批次，训练进行了�
 就是增加边反而降低效率。
 允许去除边和添加可以给重新布线，这将大大增加可能的图的空间，可以用这种方式构建。
 
-# 7 Related Work
+## 7 Related Work
 
 **网络健壮性**
 
@@ -299,7 +290,7 @@ Holme 等人的一个更广泛的调查[2002]分析了几个现实世界网络�
 构建一个具有某些理想属性的图的问题可能是在设计神经网络体系结构时首先认识到的，这种体系结构的性能是最大化的[ Harp et al. ，1990]。
 最近，出现了使用 RL [ Zoph and Le，2017]或进化算法[ Liu et al. ，2018]来发现可以在几个计算机视觉基准上提供最先进性能的体系结构的方法。
 
-# 8 Conclusions
+## 8 Conclusions
 
 在这项工作中，我们通过学习如何以一种有效的方式添加边，解决了在存在随机和有针对性的节点删除的情况下提高图的鲁棒性的问题。
 我们已经把提高任意全局目标函数的值的问题建模为一个马可夫决策过程，并且我们已经使用强化学习和图形神经网络结构来处理它。
