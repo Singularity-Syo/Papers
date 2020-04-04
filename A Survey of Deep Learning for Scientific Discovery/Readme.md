@@ -35,9 +35,43 @@ We hope that this survey will help accelerate the use of deep learning across di
 深度学习：
 * [课程] 多伦多大学的机器学习课程
 * [课程] http://cs229.stanford.edu/
+* [课程] 深度学习和神经网络 http://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/
+* [课程] 斯坦福大学 CS224N NLP with Deep Learning
+* [课程] https://github.com/machine-learning-tokyo/ai_curriculum
+
 * [社区] https://towardsdatascience.com/ 
+* [社区] https://www.reddit.com/r/machinelearning/
+
 * [书籍] https://d2l.ai/index.html
 * [书籍] https://github.com/rasbt/python-Machine-Learning-book-2nd-edition
+
+* [框架] PyTorch, TensorFlow (with Keras), Chainer, ONNX, MXNET, JAX
+
+* [教程] https://course.fast.ai/ and https://github.com/fastai/fastai
+* [教程] https://towardsdatascience.com/ 
+* [教程] https://github.com/leriomaggio/deep-learning-keras-tensorflow
+
+* [研究] https://paperswithcode.com/ and https://paperswithcode.com/sota)
+* [研究] http://www.arxiv-sanity.com/top
+* [研究] https://www.paperdigest.org/conference-paper-digest/
+* [研究] IPAM (Institute for Pure and Applied Mathematics) 项目
+* * https://www.IPAM.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule 
+* * https://www.IPAM.ucla.edu/programs/workshops/deep-learning-and-medical-applications/?tab=schedule
+* [模型] https://github.com/tensorflow/models and https://pytorch.org/docs/stable/torchvision/models.html
+
+* [模型] https://github.com/huggingface
+* [模型] https://github.com/rasbt/deeplearning-models
+* [模型] https://github.com/hysts/pytorch_image_classification
+* [模型] https://github.com/openai/baselines 强化学习
+* [模型] https://modelzoo.co/
+* [模型] https://github.com/rusty1s/pytorch_geometric 图神经网络 
+
+* [数据] 图像: https://github.com/tzutalin/labelImg, https://github.com/wkentaro/labelme, https://rectlabel.com/ 
+* [数据] 文本: https://github.com/doccano/doccano
+
+* [可视化] Tensorboard：https://www.TensorFlow.org/Tensorboard
+
+* [平台] Colab: https://colab.research.google.com/notebooks/welcome.ipynb
 
 ## 翻译进度
 ### 2020 03 29
@@ -45,5 +79,7 @@ We hope that this survey will help accelerate the use of deep learning across di
 第一节 已提交
 
 第二节 已提交
+
+第三节 已提交
 
 Refenerce 尚未校对
