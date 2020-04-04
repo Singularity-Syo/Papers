@@ -47,7 +47,7 @@ PyTorch (或者使用 Keras API 的 TensorFlow) 可能是两个最佳选择。
 
 ### **研究概况，代码，讨论**
 1. https://paperswithcode.com/ 这个优秀的网站跟踪新的研究论文和他们相应的开源代码，趋势方向和显示在许多标准基准上的最先进的结果 ( https://paperswithcode.com/sota)
-2. 关于深度学习研究的讨论在 Twitter 上非常活跃。 Http://www.arxiv-sanity.com/top 保存了一些最热门的讨论论文和评论。
+2. 关于深度学习研究的讨论在 Twitter 上非常活跃。 http://www.arxiv-sanity.com/top 保存了一些最热门的讨论论文和评论。
 3. https://www.reddit.com/r/machinelearning/ 也是一个研究和一般项目讨论的好论坛。
 4. https://www.paperdigest.org/conference-paper-digest/ 包含了许多顶级机器学习会议上所有论文的片段。
 5. IPAM (Institute for Pure and Applied Mathematics)有一些项目，比如 https://www.IPAM.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule 和 https://www.IPAM.ucla.edu/programs/workshops/deep-learning-and-medical-applications/?tab=schedule ，它们的视频覆盖了科学领域的深度学习应用。
