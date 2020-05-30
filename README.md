@@ -17,7 +17,7 @@
 
 5. [ICML2019] Learning Action Representations for Reinforcement Learning
 
-* 随笔
+* 翻译 + 随笔
 
 6. [ICLR2020] Dream to Control: Learning Behaviors by Latent Imagination
 
