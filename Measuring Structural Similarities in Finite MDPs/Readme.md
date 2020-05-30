@@ -1,5 +1,3 @@
-Measuring Structural Similarities in Finite MDPs
-
 # Measuring Structural Similarities in Finite MDPs
 
 标题：Measuring Structural Similarities in Finite MDPs
@@ -8,7 +6,7 @@ Measuring Structural Similarities in Finite MDPs
 
 发表：IJCAI 2019
 
-链接：
+链接：https://www.ijcai.org/Proceedings/2019/0511.pdf
 
 ## 摘要
 
